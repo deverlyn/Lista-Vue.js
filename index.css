@@ -1,0 +1,18 @@
+body{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	color: #808080;
+}
+form{
+	float: left;
+	margin-left: 35%;
+	margin-top: 20px;
+}
+.botao{
+	border: thin #c0c0c0 solid;
+	background-color: #fff;
+	padding: 5px;
+	border-radius: 5px;
+}
+.botao:hover{
+	box-shadow: 5px 5px 10px #c0c0c0;
+}

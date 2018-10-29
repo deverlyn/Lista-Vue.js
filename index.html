@@ -1,0 +1,45 @@
+<!Doctype html>
+<html>
+	<head>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<meta charset="utf-8">
+		<meta name="view port" content="width=device-width, user-scale=no">
+		<title>List vue</title>
+	</head>
+	<body>
+		<form id="todoList">
+		<h1>To Do</h1>
+			<input type="text" class="botao" placeholder="Digite um novo item" v-model="newItem">
+			<input type="submit" value="Adicionar Item" v-on:click="addItem" class="botao">
+			<button v-on:click="Remover(item)" class="botao">Excluir lista</button>
+			<ul>
+				<li v-for="item in Lista">
+					<p>{{	item	}}</p>
+				</li>
+			</ul>
+		</form>
+		<script>
+			var todo = new Vue({
+				el: "#todoList",
+				data:{
+					newItem: "",
+					Lista:[]
+				},
+				methods:{
+					addItem: function(e){
+					e.preventDefault();
+						var item = this.newItem.trim();
+						if(item.length >0){
+							this.Lista.push(item);
+						}
+					},
+					Remover: function(item){
+					 var index = this.Lista.indexOf(item);
+						Lista.splice(index, 1);
+					}
+				}
+			}) 
+		</script>
+	</body>
+</html>
